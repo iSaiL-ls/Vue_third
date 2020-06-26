@@ -1,0 +1,40 @@
+<template>
+  <div class="parent">
+    <div class="title">
+      <h1>标题</h1>
+    </div>
+    <span>20-20-20</span>
+  </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style lang="less" scopde>
+.parent {
+  width: 900px;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 15px;
+  margin: 0 auto;
+  position: relative;
+  .title {
+    position: absolute;
+    left: 15%;
+    top: 20%;
+    overflow: hidden;
+    h1 {
+      color: #999;
+    }
+  }
+  span {
+    position: absolute;
+    left: 15%;
+    top: 70%;
+    font-size: 16px;
+  }
+}
+</style>
