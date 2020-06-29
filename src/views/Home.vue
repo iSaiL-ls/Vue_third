@@ -8,8 +8,14 @@
       <!-- <button>ok</button> -->
     </div>
 
-    <div class="ArticleParent">
-      <Article></Article>
+    <div
+      class="ArticleParent"
+      v-for="(item,index) in filterBlog"
+      :key="index"
+      @click="$router.push('/blog')"
+      style="cursor: pointer;"
+    >
+      <Article :filterBlog="item" style="margin-top:20px;"></Article>
     </div>
   </div>
 </template>
@@ -17,6 +23,9 @@
 <script>
 import Article from '../components/Article'
 import Nav from '../components/common/Nav'
+import articledata from '../assets/artiecle'
+console.log(articledata)
+
 export default {
   data () {
     return {
@@ -33,21 +42,36 @@ export default {
     // 获取数据
     getArticle () {
       // 获取所有文章数据
-    },
-    // 点击搜索
-    search (val) {
-      //  发请求给后台然后 把数据给data里面渲染到页面上
-      console.log(val)
+      this.article = articledata.data
     }
+    // 点击搜索
+    // search (val) {
+    //   //  发请求给后台然后 把数据给data里面渲染到页面上
+    //   console.log(val)
+    // }
   },
   watch: {
-    inputval (inputval1) {
-      if (this.inputval != '') {
-        this.search(inputval1)
-      } else {
-        this.getArticle()
+    // inputval (inputval1) {
+    //   if (this.inputval != '') {
+    //     this.search(inputval1)
+    //   } else {
+    //     this.getArticle()
+    //   }
+    // }
+  },
+  computed: {
+    // 过滤
+    filterBlog () {
+      const { inputval, article } = this
+      let arr = [...article]
+      if (inputval.trim()) {
+        arr = article.filter(a => a.title.indexOf(inputval.trim()) !== -1)
       }
+      return arr
     }
+  },
+  created () {
+    this.getArticle()
   }
 }
 </script>

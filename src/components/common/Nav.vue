@@ -67,6 +67,7 @@ button {
   border-radius: 4px;
   font-size: 15px;
   font-weight: 500;
+  cursor: pointer;
 }
 .color {
   background-color: #fff !important;

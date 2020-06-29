@@ -1,8 +1,9 @@
 <template>
   <div>
     <div class="userOne">
-      <label>用户名</label>
-      <label>用户名</label>
+      <div>
+        <label>个人中心暂未开放</label>
+      </div>
     </div>
   </div>
 </template>
@@ -19,5 +20,12 @@ export default {
   width: 900px;
   background-color: #fff;
   border-radius: 15px;
+  div {
+    width: 900px;
+    height: 400px;
+    text-align: center;
+    line-height: 400px;
+    font-size: 30px;
+  }
 }
 </style>

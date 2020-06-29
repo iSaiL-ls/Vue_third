@@ -5,7 +5,7 @@
       <div class="onediv">
         <label>博客主题</label>
         <br />
-        <input type="text" v-model="blog.title" />
+        <input type="text" v-model="blog.title" placeholder="请为你的文章取个优雅的名字把~ ~ ~" />
       </div>
       <div>
         <label>博客内容</label>
@@ -13,7 +13,7 @@
       </div>
       <hr />
       <div class="threediv">
-        <button>发布</button>
+        <button @click="push">发布</button>
       </div>
     </div>
     <div></div>
@@ -34,6 +34,12 @@ export default {
   },
   components: {
     Nav
+  },
+  methods: {
+    // 发布，向后台发请求
+    push () {
+
+    }
   }
 }
 </script>
@@ -75,6 +81,7 @@ export default {
       outline: none;
       border-radius: 5px;
       border: 0;
+      cursor: pointer;
     }
   }
 }

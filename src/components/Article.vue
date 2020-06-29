@@ -1,15 +1,17 @@
 <template>
   <div class="parent">
-    <div class="title">
-      <h1>标题</h1>
+    <div>
+      <div class="title">
+        <h1>{{filterBlog.title}}</h1>
+      </div>
+      <span>{{filterBlog.date}}</span>
     </div>
-    <span>20-20-20</span>
   </div>
 </template>
 
 <script>
 export default {
-
+  props: ['filterBlog']
 }
 </script>
 
